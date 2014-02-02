@@ -32,8 +32,8 @@ development:
   password: 12345
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   database: myblog
   pool: 5
-  username: root
+  username: postgres
   password: 12345
