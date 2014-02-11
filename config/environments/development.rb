@@ -6,6 +6,12 @@ MyBlog::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  #This line sets the host option to localhost. 
+  #If this application was going into production 
+  #then we’d want to set this value to our domain name 
+  #in the equivalent production.rb file.
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
   # Do not eager load code on boot.
   config.eager_load = false
 

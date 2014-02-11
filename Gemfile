@@ -31,6 +31,12 @@ gem 'jbuilder', '~> 1.2'
 # Use Bootstrap for UI
 gem 'bootstrap-sass'
 
+
+# Using Devise for the User Authentication Module
+gem 'devise', '3.0.0.rc' 
+
+
+
 group :development do
   gem 'rails_layout'
 end

@@ -4,7 +4,14 @@ MyBlog::Application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  # Eager load code on boot. This eager loads most of Rails and
+#This line sets the host option to localhost. 
+  #If this application was going into production 
+  #then we’d want to set this value to our domain name 
+  #in the equivalent production.rb file.
+  config.action_mailer.default_url_options = { :host => 'http://dry-thicket-7461.herokuapp.com/' }
+
+
+    # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
