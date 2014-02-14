@@ -1,0 +1,28 @@
+class Users::RegistrationsController < Devise::RegistrationsController
+
+	def new
+    super
+  	end
+
+	def build_resource(*args)
+	super
+		if session[:omniauth]
+		@user.apply_omniauth(session[:omniauth])
+		@user.valid?
+		end
+	end
+
+	def create
+	super
+	session[:omniauth] = nil unless @user.new_record?
+	end
+
+	def update_with_password(params, *options)
+	 if encrypted_password.blank?
+	 update_attributes(params, *options)
+	 else
+	 super
+	 end
+	end
+
+end

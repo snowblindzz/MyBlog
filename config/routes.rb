@@ -1,14 +1,20 @@
 MyBlog::Application.routes.draw do
-  devise_for :users
-  get "welcome/index"
+  get '/auth/:provider/callback' => 'authentications#create'
+  resources :authentications
+  
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+  controllers: {omniauth_callbacks: "authentications", 
+    registrations: "users/registrations"}
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'posts#index'
-  
+  root to: 'welcome#index'
+
   resources :posts do
     resources :comments
+  
   end
 
   # Example of regular route:

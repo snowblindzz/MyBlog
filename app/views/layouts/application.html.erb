@@ -3,17 +3,16 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title><%= content_for?(:title) ? yield(:title) : "My Blog" %></title>
-		<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "My Blog" %>">
+		<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Go Went Gone, The Blog" %>">
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= csrf_meta_tags %>
 	</head>
-	<body>
+	<body style="height:800px">
 		<header class="navbar navbar-fixed-top navbar-inverse">
 			<%= render 'layouts/navigation' %>
 		</header>
 		<main role="main"  >
-		<%= render 'layouts/userlogin' %>
 		<%= render 'layouts/messages' %>
 		<%= yield %>
 		</main>

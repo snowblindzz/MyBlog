@@ -33,12 +33,21 @@ gem 'bootstrap-sass'
 
 
 # Using Devise for the User Authentication Module
-gem 'devise', '3.0.0.rc' 
+gem 'devise' 
 
+#OmniAuth provides a single way to authenticate against a number of different services
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+gem 'twitter'
+gem 'fb_graph'
 
 
 group :development do
   gem 'rails_layout'
+  gem "nifty-generators"
+
 end
 
 group :doc do
@@ -57,3 +66,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "mocha", group: :test

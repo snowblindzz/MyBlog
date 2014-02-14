@@ -1,15 +1,14 @@
 <%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" 
+      data-target=".navbar-collapse">
       </button>
-      <%= link_to 'My Blog', root_path, class: 'navbar-brand' %>
+      <%= link_to 'Go Went Gone, The Blog', root_path, class: 'navbar-brand' %>
     </div>
+    <%= render 'layouts/userlogin' %>
+    
             <%= render 'layouts/navigation_links' %>
       </div>
 </nav>
